@@ -3,7 +3,7 @@ FILE="path/to/lit/file"
 EXPECTED=$(mktemp)
 ACTUAL=$(mktemp)
 
-# Find expected warning lines from CHECK-MESSAGES
+# Find expected warning lines from CHECK-MESSAGES in file
 awk '
 /CHECK-MESSAGES/ {
     idx = index($0, "@LINE-");
@@ -37,3 +37,6 @@ echo "DIFF"
 diff -u "$EXPECTED" "$ACTUAL"
 
 rm "$EXPECTED" "$ACTUAL"
+
+
+#.
